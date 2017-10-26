@@ -1,0 +1,16 @@
+<section>
+    <!-- 第一层div是绝对定位，第二层是外部div，第三层是内部div，二三层是为了解决滚动消除滚动条方案所加的 -->
+    <div class="content-body">
+        <div class="content-container">
+            <div id="container" class="content-container-scroll">
+                <div ng-repeat="option in vm.list">
+                    <cli-message config="option"></cli-message>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-input">
+        <input id="inputtext" class="form-control" ng-model="vm.message">
+        <button class="btn btn-primary send-btn" ng-click="vm.send()" ng-disabled="!vm.message">发送</button>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<section>
+    <div class="cli-message-body pull-left" ng-if="$ctrl.config.direction === 'left'">
+        <div style="width: 56px;" class="pull-left">
+            <img src="assets/images/1.jpg" class="message-head-img" />
+        </div>
+        <div class="message-body pull-right">
+            <span ng-bind="$ctrl.config.content.text"></span>
+            <a href="{{$ctrl.config.content.url}}" ng-if="$ctrl.config.content.url" target="_blank">点击查看</a>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div class="cli-message-body pull-right" style="margin-right: 20px;" ng-if="$ctrl.config.direction === 'right'">
+        <div style="width: 56px;" class="pull-right">
+            <img src="assets/images/2.jpg" class="message-head-img pull-right" />
+        </div>
+        <div class="message-body-right pull-right text-align-right">
+            <span ng-bind="$ctrl.config.content.text"></span>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</section>
