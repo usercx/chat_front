@@ -3,10 +3,11 @@
 
     angular
         .module("cliApp")
-        .controller("module1Ctrl", module1Ctrl);
+        .controller("chatroomCtrl", chatroomCtrl);
 
-    function module1Ctrl(chatRequest, $timeout) {
+    function chatroomCtrl(chatRequest, $timeout) {
         let vm = this;
+        // 每当发送新消息或者接受新消息的时候都滚动到最下面
         let scroll = function (content, direction) {
             let obj = {
                 direction: direction,
@@ -18,6 +19,7 @@
                 document.getElementById('container').scrollTop = document.getElementById('container').scrollHeight;
             });
         };
+        // 消息列表
         vm.list = [
             {
                 direction: "left",
@@ -26,19 +28,20 @@
                 }
             }
         ];
+        // 发送按钮，当按enter也绑定到这上面
         vm.send = function () {
-            let obj = {
-                text: vm.message
-            };
+            let obj = {};
+            obj.text = vm.message;
+            if(!obj.text){
+                return;
+            }
             scroll(obj, "right");
             chatRequest.chat({
                 message: vm.message,
                 successCb: function(data){
-                    debugger;
                     scroll(data.data, "left");
                 },
                 errorCb: function(){
-                    debugger;
                     let data = {
                         text: "我好像出错了，你还爱我么~"
                     };
@@ -47,6 +50,12 @@
             });
             angular.element("#inputtext").focus();
             vm.message = "";
+        };
+        // 敲回车自动发送消息
+        vm.enter = function(e){
+            if(e.which === 13){
+                vm.send();
+            }
         };
     }
 })();

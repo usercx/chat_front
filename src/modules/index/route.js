@@ -7,10 +7,10 @@
 
     function routeConfig($stateProvider) {
         $stateProvider
-            .state("chatroom", {
+            .state("index", {
                 "url": "/",
-                templateUrl: "modules/module1/main.html",
-                controller: "module1Ctrl",
+                templateUrl: "modules/index/main.html",
+                controller: "indexCtrl",
                 controllerAs: "vm"
             });
     }
