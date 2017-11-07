@@ -1,23 +1,96 @@
 // /* 生成字体大小的样式，这里面只存放公用的类与公用的方法 */
-// .generate-fs(100);
+.generate-fs(100);
 
-// .generate-fs(@n, @i: 1) when (@i =< @n) {
-//   .fs-@{i} {
-//     font-size: (1px * @i);
-//   }
-//   .generate-fs(@n, (@i + 1));
-// }
+.generate-fs(@n, @i: 1) when (@i =< @n) {
+  .fs-@{i} {
+    font-size: (1px * @i);
+  }
+  .generate-fs(@n, (@i + 1));
+}
 
-.pl-4{
-    padding-left: 4px;
-}
-.pt-4{
-    padding-top: 4px;
-}
-.pr-4{
-    padding-right: 4px;
-}
+.generate-padding-margin-1(100);
+.generate-padding-margin-5(500);
+
+.generate-padding-margin-1(@n, @i: 1) when (@i =< @n) {
+    .pl-@{i} {
+        padding-left: (1px * @i);
+    }
+    .pr-@{i} {
+        padding-right: (1px * @i);
+    }
+    .pt-@{i} {
+        padding-top: (1px * @i);
+    }
+    .pb-@{i} {
+        padding-bottom: (1px * @i);
+    }
+    .p-@{i} {
+        padding: (1px * @i);
+    }
+    .ml-@{i} {
+        padding-left: (1px * @i);
+    }
+    .mr-@{i} {
+        padding-right: (1px * @i);
+    }
+    .mt-@{i} {
+        padding-top: (1px * @i);
+    }
+    .mb-@{i} {
+        padding-bottom: (1px * @i);
+    }
+    .m-@{i} {
+        padding: (1px * @i);
+    }
+    .generate-padding-margin-1(@n, (@i + 1));
+  }
+
+  .generate-padding-margin-5(@n, @i: 5) when (@i =< @n) {
+    .pl-@{i} {
+        padding-left: (5px * @i);
+    }
+    .pr-@{i} {
+        padding-right: (5px * @i);
+    }
+    .pt-@{i} {
+        padding-top: (5px * @i);
+    }
+    .pb-@{i} {
+        padding-bottom: (5px * @i);
+    }
+    .p-@{i} {
+        padding: (5px * @i);
+    }
+    .ml-@{i} {
+        padding-left: (5px * @i);
+    }
+    .mr-@{i} {
+        padding-right: (5px * @i);
+    }
+    .mt-@{i} {
+        padding-top: (5px * @i);
+    }
+    .mb-@{i} {
+        padding-bottom: (5px * @i);
+    }
+    .m-@{i} {
+        padding: (5px * @i);
+    }
+    .generate-padding-margin-5(@n, (@i + 5));
+  }
 
 .text-align-right{
     text-align: right;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.text-align-left{
+    text-align: left;
+}
+
+.display-none{
+    display: none;
 }

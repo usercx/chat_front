@@ -1,38 +1,53 @@
-@button-width: 72px;
-@pd-bottom: 4px;
-// 输入框外部的div
-.text-input{
-    position: fixed;
-    bottom: @pd-bottom;
-    left: 2px;
-    right: @button-width + 4px;
-}
+.chatroom{
+    @button-width: 72px;
+    @pd-bottom: 4px;
+    // 输入框外部的div
+    .text-input{
+        position: fixed;
+        bottom: @pd-bottom;
+        left: 2px;
+        right: @button-width + 4px;
+    }
 
-// 发送按钮
-.send-btn{
-    position: fixed;
-    bottom: @pd-bottom;
-    right: 2px;
-    width: @button-width;
-}
+    // 发送按钮
+    .send-btn{
+        position: fixed;
+        bottom: @pd-bottom;
+        right: 2px;
+        width: @button-width;
+    }
 
-// 消息主题区域
-.content-body{
-    position: fixed;
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 42px;
-}
+    // 消息主题区域
+    .content-body{
+        position: fixed;
+        top: 4px;
+        left: 4px;
+        right: 4px;
+        bottom: 42px;
+    }
 
-.content-container{
-    width: 100%;
-    overflow: hidden;
-    height: calc(~"100vh - 46px");
-}
-.content-container-scroll{
-    width: calc(~"100% + 20px");
-    overflow-y: auto;
-    overflow-x: hidden; 
-    height: calc(~"100vh - 46px");
+    .content-container{
+        width: 100%;
+        overflow: hidden;
+        height: calc(~"100vh - 46px");
+    }
+    .content-container-scroll{
+        width: calc(~"100% + 20px");
+        overflow-y: auto;
+        overflow-x: hidden; 
+        height: calc(~"100vh - 46px");
+    }
+
+    @title-height: 25px;
+    // 返回主菜单区域
+    .dismiss{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1200;
+        height: @title-height;
+        background: #00CDAC;
+        line-height: @title-height;
+    }
 }
