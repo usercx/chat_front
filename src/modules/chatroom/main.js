@@ -6,6 +6,7 @@
         .controller("chatroomCtrl", chatroomCtrl);
 
     function chatroomCtrl(chatRequest, $timeout) {
+        document.title = "闹闹女王大人的侍宠~";
         let vm = this;
         // 每当发送新消息或者接受新消息的时候都滚动到最下面
         let scroll = function (content, direction) {
@@ -66,20 +67,5 @@
             }
         };
         // 默认展示最顶端提示条，如果点击x则取消展示
-        let titleHeight = "25px";// 如果以后要更改这个的高度就将其更改为要更改到的高度就ok了（将main.less中的title-height同步就ok了）
-        vm.isShow = true;
-        vm.toolTip = {
-            'margin-top': titleHeight
-        };
-        vm.close = function () {
-            vm.toolTip = {
-                'margin-top': '0px'
-            };
-            vm.isShow = false;
-        };
-        // 5秒后最顶端自动消失
-        $timeout(function(){
-            vm.close();
-        }, 5000);
     }
 })();

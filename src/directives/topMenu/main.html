@@ -1,0 +1,10 @@
+<!-- 这个是每个子页面最上方，返回主菜单的提示（可以关闭） -->
+<div class="top-menu">
+  <div class="dismiss" ng-if="isShow">
+    <a ui-sref="index" style="margin-left: 5%;">返回主菜单</a>
+    <span ng-bind="time + '秒后关闭'" class="white"></span>
+    <button type="button" class="close" style="margin-right: 5%;height: 100%;" ng-click="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>

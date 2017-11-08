@@ -7,6 +7,7 @@
 
     function indexCtrl($state) {
         let vm = this;
+        document.title = "小久欢迎您~";
         vm.go = function(state){
             $state.go(state);
         };

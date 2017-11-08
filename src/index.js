@@ -1,8 +1,5 @@
 (function () {
-    "use strict";
+  "use strict";
 
-    angular
-        .module('cliApp', [
-            'ui.router'
-        ]);
+  angular.module('cliApp', ['ui.router']);
 })();

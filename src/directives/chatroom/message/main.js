@@ -7,14 +7,14 @@
 
     function cliMessage(){
         return {
-            templateUrl: "directives/message/main.html",
+            templateUrl: "directives/chatroom/message/main.html",
             restrict: "E",
             scope: {
                 config: "="
             },
             controller: function($scope){
                 let $ctrl = this;
-                $ctrl.config = Object.assign({}, $scope.config);
+                $ctrl.config = _.cloneDeep($scope.config);
             },
             controllerAs: "$ctrl"
         };

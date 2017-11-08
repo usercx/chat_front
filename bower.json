@@ -2,8 +2,7 @@
   "name": "cx-cli",
   "description": "",
   "main": "index.js",
-  "authors": [
-  ],
+  "authors": [],
   "license": "ISC",
   "homepage": "",
   "ignore": [
@@ -18,7 +17,8 @@
     "angular": "^1.6.6",
     "bootstrap": "^3.3.7",
     "polyfill": "*",
-    "angular-ui-router": "^1.0.10"
+    "angular-ui-router": "^1.0.10",
+    "lodash": "^4.17.4"
   },
   "overrides": {
     "bootstrap": {

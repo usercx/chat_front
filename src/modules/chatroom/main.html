@@ -1,11 +1,8 @@
 <section class="chatroom" ng-keyup="vm.enter($event)">
-    <div class="dismiss" ng-if="vm.isShow">
-        <a ui-sref="index" style="margin-left: 5%;">返回主菜单</a>
-        <button type="button" class="close"  style="margin-right: 5%;height: 100%;" ng-click="vm.close()"><span aria-hidden="true">&times;</span></button>
-    </div>
+  <top-menu margin-top="vm.height"></top-menu>
     <!-- 第一层div是绝对定位，第二层是外部div，第三层是内部div，二三层是为了解决滚动消除滚动条方案所加的 -->
     <div class="content-body">
-        <div class="content-container" ng-style="vm.toolTip">
+        <div class="content-container" ng-style="{'margin-top': vm.height}">
             <div id="container" class="content-container-scroll">
                 <div ng-repeat="option in vm.list">
                     <cli-message config="option"></cli-message>

@@ -17,6 +17,7 @@
     "module": false,
     "$":false,
     "_":false,
-    "require": false
+    "require": false,
+    "document": false
   }
 }
