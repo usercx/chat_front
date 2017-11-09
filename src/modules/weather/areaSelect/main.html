@@ -1,0 +1,46 @@
+<section class="weather-area-select">
+  <top-menu margin-top="vm.height"></top-menu>
+  <div ng-style="{'margin-top': vm.height}">
+    <div class="p-20 select-content">
+      <!-- 已经选好的信息 -->
+      <div>
+        已选城市：
+        <ol style="display: inline-block;" class="breadcrumb">
+          <li>HOME</li>
+          <li>CANXIN</li>
+          <li>Data</li>
+        </ol>
+        <button class="btn btn-primary pull-right">确认选择</button>
+      </div>
+      <div style="clear:both;"></div>
+      <!-- 选择列表 -->
+      <ul class="nav nav-tabs">
+        <li>
+          <a href ng-click="vm.change(0)" ng-class="vm.provinceClass()">选择省</a>
+        </li>
+        <li>
+          <a href ng-click="vm.change(1)" ng-class="vm.cityClass()">选择市</a>
+        </li>
+        <li>
+          <a href ng-click="vm.change(2)" ng-class="vm.areaClass()">选择区</a>
+        </li>
+      </ul>
+      <!-- 选择省显示该页面 -->
+      <div style="position: relative;" ng-show="vm.select === 0">
+        <div class="list-group">
+          <a ng-repeat="province in vm.province.list" class="list-group-item text-align-center" href="#">
+            <span ng-bind="province.name"></span>
+          </a>
+        </div>
+      </div>
+      <!-- 选择省显示该页面 -->
+      <div style="position: relative;" ng-show="vm.select === 1">
+        市
+      </div>
+      <!-- 选择省显示该页面 -->
+      <div style="position: relative;" ng-show="vm.select === 2">
+        区
+      </div>
+    </div>
+  </div>
+</section>
