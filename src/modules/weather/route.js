@@ -24,7 +24,12 @@
             controllerAs: "vm"
           })
           .state("weather.info", {
-            url: '/info',
+            url: '/info?provinceId=&cityId=&areaId',
+            // params: {
+            //   province: null,
+            //   city: null,
+            //   area: null
+            // },
             templateUrl: "modules/weather/weatherInfo/main.html",
             controller: "weatherInfoCtrl",
             controllerAs: "vm"

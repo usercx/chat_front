@@ -18,6 +18,7 @@
     "$":false,
     "_":false,
     "require": false,
-    "document": false
+    "document": false,
+    "window": false
   }
 }

@@ -1,3 +1,41 @@
 <section>
-    天气信息
-  </section>
+  <top-menu margin-top="vm.height"></top-menu>
+  <div ng-style="{'margin-top': vm.height}" class="weather-info">
+    <div class="well well-sm well-color">
+      <!-- <span class="glyphicon glyphicon-cloud fs-40"></span> -->
+      <!-- <div><span>当前城市：</span></div>
+      <div><span ng-if="vm.place.province" ng-bind="vm.place.province" class="fs-16 mr-10"></span></div>
+      <div><span ng-if="vm.place.city" ng-bind="vm.place.city" class="fs-16 mr-10"></span></div>
+      <div><span ng-if="vm.place.area" ng-bind="vm.place.area" class="fs-16 mr-10"></span></div> -->
+      <ul class="basic-info">
+        <li>省级区域：<span ng-bind="vm.place.province"></span></li>
+        <li>市级区域：<span ng-bind="vm.place.city"></span></li>
+        <li ng-if="vm.place.area">区级区域：<span ng-bind="vm.place.area"></span></li>
+        <li>地区经度：<span ng-bind="vm.fixed(vm.info.basic.lat)"></span></li>
+        <li>地区纬度：<span ng-bind="vm.fixed(vm.info.basic.lon)"></span></li>
+      </ul>
+    </div>
+    <!-- 实时天气 -->
+    <div class="panel panel-info">
+      <div class="panel panel-heading">
+        <span ng-bind="'实时天气（更新于' + vm.info.update.loc + '）'"></span>
+      </div>
+      <ul class="basic-info panel-body">
+        <li>天气：<span ng-bind="vm.info.now.cond_txt"></span></li>
+        <li>当前温度：<span ng-bind="vm.info.now.tmp + '℃'"></span></li>
+        <li>体感温度：<span ng-bind="vm.info.now.fl + '℃'"></span></li>
+        <li>风力风向：<span ng-bind="vm.info.now.wind_sc + '级  ' + vm.info.now.wind_dir"></span></li>
+        <li>风速：<span ng-bind="vm.info.now.wind_spd + '公里/小时'"></span></li>
+        <li>相对湿度：<span ng-bind="vm.info.now.hum + '%'"></span></li>
+        <li>大气压强：<span ng-bind="vm.info.now.pres"></span></li>
+        <li>能见度：<span ng-bind="vm.info.now.vis + '公里'"></span></li>
+        <li>云量：<span ng-bind="vm.info.now.cloud"></span></li>
+      </ul>
+    </div>
+    <!-- 未来三天天气预报 -->
+    <h3>未来三天天气预报</h3>
+    <div class="forcast">
+      asd
+    </div>
+  </div>
+</section>

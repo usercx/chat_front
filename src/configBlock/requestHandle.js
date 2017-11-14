@@ -17,7 +17,7 @@
         index = index === -1 ? url.length : index;
         url = url.substring(0, index);
         if(url.indexOf(".") < 0) { // 在前端调试的环境下请求的路径有.即代表请求的是文件而不是接口
-          config.url = "http://192.168.2.101:4666" + config.url;
+          config.url = "http://192.168.43.47:4666" + config.url;
         }
         return config;
       },
@@ -31,6 +31,9 @@
           return null;
         }
         return data.data;
+      },
+      responseError: function(res){
+        return null;
       }
     };
   }

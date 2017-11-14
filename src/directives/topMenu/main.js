@@ -19,6 +19,9 @@
           $scope.marginTop = "0px";
           $scope.isShow = false;
         };
+        $scope.refresh = function(){
+          window.location.href = "/";
+        };
         // 定时器的ID
         let timerId = null;
         // 5秒后关闭

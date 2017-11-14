@@ -4,13 +4,13 @@
     <div class="p-20 select-content">
       <!-- 已经选好的信息 -->
       <div>
-        已选城市：
         <ol style="display: inline-block;" class="breadcrumb">
-          <li>HOME</li>
-          <li>CANXIN</li>
-          <li>Data</li>
+          <li>已选城市</li>
+          <li ng-if="vm.province.select.name"><span ng-bind="vm.province.select.name"></span></li>
+          <li ng-if="vm.city.select.name"><span ng-bind="vm.city.select.name"></span></li>
+          <li ng-if="vm.area.select.name"><span ng-bind="vm.area.select.name"></span></li>
         </ol>
-        <button class="btn btn-primary pull-right">确认选择</button>
+        <a class="btn btn-primary pull-right" ng-click="vm.go()" ng-disabled="!vm.province.select || !vm.city.select">确认选择</a>
       </div>
       <div style="clear:both;"></div>
       <!-- 选择列表 -->
@@ -19,27 +19,35 @@
           <a href ng-click="vm.change(0)" ng-class="vm.provinceClass()">选择省</a>
         </li>
         <li>
-          <a href ng-click="vm.change(1)" ng-class="vm.cityClass()">选择市</a>
+          <a href ng-disabled="!vm.province.select" ng-click="vm.province.select && vm.change(1)" ng-class="vm.cityClass()">选择市</a>
         </li>
         <li>
-          <a href ng-click="vm.change(2)" ng-class="vm.areaClass()">选择区</a>
+          <a href ng-disabled="!vm.city.select" ng-click="vm.city.select && vm.change(2)" ng-class="vm.areaClass()">选择区</a>
         </li>
       </ul>
       <!-- 选择省显示该页面 -->
       <div style="position: relative;" ng-show="vm.select === 0">
         <div class="list-group">
-          <a ng-repeat="province in vm.province.list" class="list-group-item text-align-center" href="#">
+          <a ng-repeat="province in vm.province.list" class="list-group-item text-align-center" ng-click="vm.selectProvince(province)" href="#">
             <span ng-bind="province.name"></span>
           </a>
         </div>
       </div>
       <!-- 选择省显示该页面 -->
       <div style="position: relative;" ng-show="vm.select === 1">
-        市
+        <div class="list-group">
+          <a ng-repeat="city in vm.city.list" class="list-group-item text-align-center" ng-click="vm.selectCity(city)" href="#">
+            <span ng-bind="city.name"></span>
+          </a>
+        </div>
       </div>
       <!-- 选择省显示该页面 -->
       <div style="position: relative;" ng-show="vm.select === 2">
-        区
+        <div class="list-group">
+          <a ng-repeat="area in vm.area.list" class="list-group-item text-align-center" ng-click="vm.selectArea(area)" href="#">
+            <span ng-bind="area.name"></span>
+          </a>
+        </div>
       </div>
     </div>
   </div>

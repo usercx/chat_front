@@ -13,68 +13,68 @@
 
 .generate-padding-margin-1(@n, @i: 1) when (@i =< @n) {
     .pl-@{i} {
-        padding-left: (1px * @i);
+      padding-left: (1px * @i);
     }
     .pr-@{i} {
-        padding-right: (1px * @i);
+      padding-right: (1px * @i);
     }
     .pt-@{i} {
-        padding-top: (1px * @i);
+      padding-top: (1px * @i);
     }
     .pb-@{i} {
-        padding-bottom: (1px * @i);
+      padding-bottom: (1px * @i);
     }
     .p-@{i} {
-        padding: (1px * @i);
+      padding: (1px * @i);
     }
     .ml-@{i} {
-        padding-left: (1px * @i);
+      margin-left: (1px * @i);
     }
     .mr-@{i} {
-        padding-right: (1px * @i);
+      margin-right: (1px * @i);
     }
     .mt-@{i} {
-        padding-top: (1px * @i);
+      margin-top: (1px * @i);
     }
     .mb-@{i} {
-        padding-bottom: (1px * @i);
+      margin-bottom: (1px * @i);
     }
     .m-@{i} {
-        padding: (1px * @i);
+      margin: (1px * @i);
     }
     .generate-padding-margin-1(@n, (@i + 1));
   }
 
   .generate-padding-margin-5(@n, @i: 5) when (@i =< @n) {
     .pl-@{i} {
-        padding-left: (1px * @i);
+      padding-left: (1px * @i);
     }
     .pr-@{i} {
-        padding-right: (1px * @i);
+      padding-right: (1px * @i);
     }
     .pt-@{i} {
-        padding-top: (1x * @i);
+      padding-top: (1x * @i);
     }
     .pb-@{i} {
-        padding-bottom: (1px * @i);
+      padding-bottom: (1px * @i);
     }
     .p-@{i} {
-        padding: (1px * @i);
+      padding: (1px * @i);
     }
     .ml-@{i} {
-        padding-left: (1px * @i);
+      margin-left: (1px * @i);
     }
     .mr-@{i} {
-        padding-right: (1px * @i);
+      margin-right: (1px * @i);
     }
     .mt-@{i} {
-        padding-top: (1px * @i);
+      margin-top: (1px * @i);
     }
     .mb-@{i} {
-        padding-bottom: (1px * @i);
+      margin-bottom: (1px * @i);
     }
     .m-@{i} {
-        padding: (1px * @i);
+      margin: (1px * @i);
     }
     .generate-padding-margin-5(@n, (@i + 5));
   }

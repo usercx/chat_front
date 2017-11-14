@@ -12,7 +12,7 @@
   function shadow($rootScope){
     $rootScope.shadowCounter = 0;
     return {
-      request: function(config){// 将请求重新打到localhost:4006上面去，这个地方只供测试用
+      request: function(config){
         $rootScope.shadowCounter++;
         return config;
       },
