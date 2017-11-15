@@ -6,7 +6,7 @@
     .controller("chatroomCtrl", chatroomCtrl);
 
   function chatroomCtrl(chatRequest, $timeout) {
-    document.title = "闹闹女王大人的侍宠~";
+    document.title = "逗比小久机器人~";
     let vm = this;
     // 每当发送新消息或者接受新消息的时候都滚动到最下面
     let scroll = function (content, direction) {
@@ -31,7 +31,7 @@
       {
         direction: "left",
         content: {
-          text: "尊贵的闹闹女王大人，你好，我是残心派来的小逗比~"
+          text: "您好，我是小久派来的逗比机器人~"
         }
       }
     ];
