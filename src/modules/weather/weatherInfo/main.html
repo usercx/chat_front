@@ -2,17 +2,22 @@
   <top-menu margin-top="vm.height"></top-menu>
   <div ng-style="{'margin-top': vm.height}" class="weather-info">
     <div class="well well-sm well-color">
-      <!-- <span class="glyphicon glyphicon-cloud fs-40"></span> -->
-      <!-- <div><span>当前城市：</span></div>
-      <div><span ng-if="vm.place.province" ng-bind="vm.place.province" class="fs-16 mr-10"></span></div>
-      <div><span ng-if="vm.place.city" ng-bind="vm.place.city" class="fs-16 mr-10"></span></div>
-      <div><span ng-if="vm.place.area" ng-bind="vm.place.area" class="fs-16 mr-10"></span></div> -->
       <ul class="basic-info">
-        <li>省级区域：<span ng-bind="vm.place.province"></span></li>
-        <li>市级区域：<span ng-bind="vm.place.city"></span></li>
-        <li ng-if="vm.place.area">区级区域：<span ng-bind="vm.place.area"></span></li>
-        <li>地区经度：<span ng-bind="vm.fixed(vm.info.basic.lat)"></span></li>
-        <li>地区纬度：<span ng-bind="vm.fixed(vm.info.basic.lon)"></span></li>
+        <li>省级区域：
+          <span ng-bind="vm.place.province"></span>
+        </li>
+        <li>市级区域：
+          <span ng-bind="vm.place.city"></span>
+        </li>
+        <li ng-if="vm.place.area">区级区域：
+          <span ng-bind="vm.place.area"></span>
+        </li>
+        <li>地区经度：
+          <span ng-bind="vm.fixed(vm.info.basic.lat)"></span>
+        </li>
+        <li>地区纬度：
+          <span ng-bind="vm.fixed(vm.info.basic.lon)"></span>
+        </li>
       </ul>
     </div>
     <!-- 实时天气 -->
@@ -21,21 +26,76 @@
         <span ng-bind="'实时天气（更新于' + vm.info.update.loc + '）'"></span>
       </div>
       <ul class="basic-info panel-body">
-        <li>天气：<span ng-bind="vm.info.now.cond_txt"></span></li>
-        <li>当前温度：<span ng-bind="vm.info.now.tmp + '℃'"></span></li>
-        <li>体感温度：<span ng-bind="vm.info.now.fl + '℃'"></span></li>
-        <li>风力风向：<span ng-bind="vm.info.now.wind_sc + '级  ' + vm.info.now.wind_dir"></span></li>
-        <li>风速：<span ng-bind="vm.info.now.wind_spd + '公里/小时'"></span></li>
-        <li>相对湿度：<span ng-bind="vm.info.now.hum + '%'"></span></li>
-        <li>大气压强：<span ng-bind="vm.info.now.pres"></span></li>
-        <li>能见度：<span ng-bind="vm.info.now.vis + '公里'"></span></li>
-        <li>云量：<span ng-bind="vm.info.now.cloud"></span></li>
+        <li>天气：
+          <span ng-bind="vm.info.now.cond_txt"></span>
+        </li>
+        <li>当前温度：
+          <span ng-bind="vm.info.now.tmp + '℃'"></span>
+        </li>
+        <li>体感温度：
+          <span ng-bind="vm.info.now.fl + '℃'"></span>
+        </li>
+        <li>风力风向：
+          <span ng-bind="vm.info.now.wind_sc + '级  ' + vm.info.now.wind_dir"></span>
+        </li>
+        <li>风速：
+          <span ng-bind="vm.info.now.wind_spd + '公里/小时'"></span>
+        </li>
+        <li>相对湿度：
+          <span ng-bind="vm.info.now.hum + '%'"></span>
+        </li>
+        <li>大气压强：
+          <span ng-bind="vm.info.now.pres"></span>
+        </li>
+        <li>能见度：
+          <span ng-bind="vm.info.now.vis + '公里'"></span>
+        </li>
+        <li>云量：
+          <span ng-bind="vm.info.now.cloud"></span>
+        </li>
       </ul>
     </div>
     <!-- 未来三天天气预报 -->
     <h3>未来三天天气预报</h3>
-    <div class="forcast">
-      asd
+    <div ng-repeat="forcast in vm.info.daily_forecast">
+      <div class="forcast mb-40">
+        <ul class="basic-info panel-body">
+          <li>日期：
+            <span ng-bind="forcast.date"></span>
+          </li>
+          <li>天气（白间/夜晚）：
+            <span ng-bind="forcast.cond_txt_d + '/' + forcast.cond_txt_n"></span>
+          </li>
+          <li>气温：
+            <span ng-bind="forcast.tmp_min + '~' + forcast.tmp_max + '℃'"></span>
+          </li>
+          <li>日出时间/日落时间：
+            <span ng-bind="forcast.sr + '/' + forcast.ss"></span>
+          </li>
+          <li>月升时间/月落时间：
+            <span ng-bind="forcast.mr + '/' + forcast.ms"></span>
+          </li>
+          <li>风力风向：
+            <span ng-bind="forcast.wind_sc + '级  ' + forcast.wind_dir"></span>
+          </li>
+          <li>风速：
+            <span ng-bind="forcast.wind_spd + '公里/小时'"></span>
+          </li>
+          <li>相对湿度：
+            <span ng-bind="forcast.hum + '%'"></span>
+          </li>
+          <li>大气压强：
+            <span ng-bind="forcast.pres"></span>
+          </li>
+          <li>能见度：
+            <span ng-bind="forcast.vis + '公里'"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="mb-10 text-align-center">
+      <p>感谢和风天气提供的免费api</p>
+      <p>每天最大查询次数为1000次，请勿恶意访问接口，谢谢~</p>
     </div>
   </div>
 </section>
