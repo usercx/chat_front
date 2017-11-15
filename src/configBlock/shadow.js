@@ -7,7 +7,7 @@
 
   angular
     .module("cliApp")
-    .config(configBlock);
+    .factory('shadow', shadow);
 
   function shadow($rootScope) {
     $rootScope.shadowCounter = 0;
@@ -57,9 +57,9 @@
       }
     };
   }
-  function configBlock($httpProvider) {
-    // 执行顺序为request的时候从0往后执行，response从后往0执行。
-    $httpProvider.interceptors[1] = shadow;
-    // .push(shadow);
-  }
+  // function configBlock($httpProvider) {
+  //   // 执行顺序为request的时候从0往后执行，response从后往0执行。
+  //   $httpProvider.interceptors[1] = shadow;
+  //   // .push(shadow);
+  // }
 })();
